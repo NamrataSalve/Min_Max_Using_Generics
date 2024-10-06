@@ -2,20 +2,25 @@ package minmaxgenericsproblem;
 
 public class MaxString {
     public static void main(String[] args) {
-        System.out.println("Welcome to Min Max Generics problem");
-        String[] arr = {"Apple", "Peach", "Banana"};
-        getMaximumString(arr);
+        Integer[] integerArray = {10, 40, 20};
+        getMax(integerArray);
+        Float[] floatArray = {2.3f,4.2f,7.5f};
+        getMax(floatArray);
+        String[] stringArray = {"Apple", "Peach", "Banana"};
+        getMax(stringArray);
     }
-    public static void getMaximumString(String[] arr) {
-        String max = arr[0];
+    public static <T extends Comparable<T>> void getMax(T[] arr) {
+        T max = arr[0];
         int position = 0;
         for (int i = 0; i < arr.length; i++) {
             int a = arr[i].compareTo(max);
             if (a > 0) {
-                max = arr[i];
-                position = i;
+                if (a > 0) {
+                    max = arr[i];
+                    position = i;
+                }
             }
+            System.out.println("Maximum element number is " + max + " and its position is " + position);
         }
-        System.out.println("Maximum String number is " + max+" and its position is "+position);
     }
 }
