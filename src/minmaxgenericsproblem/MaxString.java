@@ -1,13 +1,13 @@
 package minmaxgenericsproblem;
 
-public class MaxFloat {
+public class MaxString {
     public static void main(String[] args) {
         System.out.println("Welcome to Min Max Generics problem");
-        Float[] arr = {2.3f,4.2f,7.5f};
-        getMaximumFloat(arr);
+        String[] arr = {"Apple", "Peach", "Banana"};
+        getMaximumString(arr);
     }
-    public static void getMaximumFloat(Float[] arr) {
-        float max = arr[0];
+    public static void getMaximumString(String[] arr) {
+        String max = arr[0];
         int position = 0;
         for (int i = 0; i < arr.length; i++) {
             int a = arr[i].compareTo(max);
@@ -16,6 +16,6 @@ public class MaxFloat {
                 position = i;
             }
         }
-        System.out.println("Maximum float number is " + max+" and its position is "+position);
+        System.out.println("Maximum String number is " + max+" and its position is "+position);
     }
 }
